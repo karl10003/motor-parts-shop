@@ -1,0 +1,3 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Orders>
+<Order><OrderCode>ORD20260426200938339238</OrderCode><CustomerName>karl</CustomerName><PartName>Racing Exhaust Pipe</PartName><Quantity>1</Quantity><PaymentMethod>Cash on Delivery</PaymentMethod><TotalAmount>3500.0</TotalAmount><Date>2026-04-26 20:09:38</Date></Order><Order><OrderCode>ORD20260426202003168809</OrderCode><CustomerName>karl</CustomerName><PartName>Racing Exhaust Pipe</PartName><Quantity>2</Quantity><PaymentMethod>Cash on Delivery</PaymentMethod><TotalAmount>7000.0</TotalAmount><Date>2026-04-26 20:20:03</Date></Order></Orders>

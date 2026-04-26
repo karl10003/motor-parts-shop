@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MotorParts>
+
+    <Part>
+        <ID>1</ID>
+        <Name>Racing Exhaust Pipe</Name>
+        <Brand>Yamaha</Brand>
+        <Category>Exhaust</Category>
+        <Price>3500</Price>
+        <Stock>15</Stock>
+        <ImageURL>https://images.unsplash.com/photo-1558981285-6f0c94958bb6?auto=format&amp;fit=crop&amp;w=900&amp;q=80</ImageURL>
+    </Part>
+
+    <Part>
+        <ID>2</ID>
+        <Name>Motorcycle Chain Set</Name>
+        <Brand>Honda</Brand>
+        <Category>Drive System</Category>
+        <Price>1200</Price>
+        <Stock>30</Stock>
+        <ImageURL>https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&amp;fit=crop&amp;w=900&amp;q=80</ImageURL>
+    </Part>
+
+    <Part>
+        <ID>3</ID>
+        <Name>Disc Brake Pad</Name>
+        <Brand>RCB</Brand>
+        <Category>Brake System</Category>
+        <Price>450</Price>
+        <Stock>50</Stock>
+        <ImageURL>https://images.unsplash.com/photo-1558980664-10e7170b5df9?auto=format&amp;fit=crop&amp;w=900&amp;q=80</ImageURL>
+    </Part>
+
+    <Part>
+        <ID>4</ID>
+        <Name>LED Headlight Bulb</Name>
+        <Brand>Osram</Brand>
+        <Category>Electrical</Category>
+        <Price>650</Price>
+        <Stock>25</Stock>
+        <ImageURL>https://images.unsplash.com/photo-1515777315835-281b94c9589f?auto=format&amp;fit=crop&amp;w=900&amp;q=80</ImageURL>
+    </Part>
+
+    <Part>
+        <ID>5</ID>
+        <Name>Engine Oil 4T</Name>
+        <Brand>Shell Advance</Brand>
+        <Category>Lubricants</Category>
+        <Price>380</Price>
+        <Stock>40</Stock>
+        <ImageURL>https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&amp;fit=crop&amp;w=900&amp;q=80</ImageURL>
+    </Part>
+
+    <Part>
+        <ID>6</ID>
+        <Name>Side Mirror Pair</Name>
+        <Brand>Generic</Brand>
+        <Category>Accessories</Category>
+        <Price>300</Price>
+        <Stock>35</Stock>
+        <ImageURL>https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&amp;fit=crop&amp;w=900&amp;q=80</ImageURL>
+    </Part>
+
+</MotorParts>
