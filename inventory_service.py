@@ -9,9 +9,9 @@ XML_FILE = Path("inventory.xml")
 
 def load_inventory_from_xml():
     """
-    This function reads inventory.xml and saves motor parts into MySQL.
-    It will only load the XML data if the motor_parts table is empty.
-    This prevents stock from resetting every time you restart the app.
+    Reads inventory.xml and saves or updates motor parts in the database.
+    It updates the image path from XML.
+    It does not reset stock if the product already exists.
     """
 
     if not XML_FILE.exists():
@@ -20,26 +20,27 @@ def load_inventory_from_xml():
     db = get_db()
 
     try:
-        existing_parts = db.query(MotorPart).count()
-
-        if existing_parts > 0:
-            return
-
         tree = ET.parse(XML_FILE)
         root = tree.getroot()
 
         for item in root.findall("Part"):
-            part = MotorPart(
-                id=int(item.findtext("ID")),
-                name=item.findtext("Name", ""),
-                brand=item.findtext("Brand", ""),
-                category=item.findtext("Category", ""),
-                price=float(item.findtext("Price", "0")),
-                stock=int(item.findtext("Stock", "0")),
-                image_url=item.findtext("ImageURL", "")
-            )
+            part_id = int(item.findtext("ID"))
+            xml_stock = int(item.findtext("Stock", "0"))
 
-            db.add(part)
+            part = db.get(MotorPart, part_id)
+
+            if part is None:
+                part = MotorPart(
+                    id=part_id,
+                    stock=xml_stock
+                )
+                db.add(part)
+
+            part.name = item.findtext("Name", "")
+            part.brand = item.findtext("Brand", "")
+            part.category = item.findtext("Category", "")
+            part.price = float(item.findtext("Price", "0"))
+            part.image_url = item.findtext("ImageURL", "")
 
         db.commit()
 
@@ -48,10 +49,6 @@ def load_inventory_from_xml():
 
 
 def get_all_parts(search_text=None):
-    """
-    This function gets all motor parts from MySQL.
-    """
-
     db = get_db()
 
     try:
@@ -73,10 +70,6 @@ def get_all_parts(search_text=None):
 
 
 def get_part_by_id(part_id):
-    """
-    This function gets one motor part by ID.
-    """
-
     db = get_db()
 
     try:
@@ -87,10 +80,6 @@ def get_part_by_id(part_id):
 
 
 def update_stock(part_id, new_stock):
-    """
-    This function updates stock in MySQL.
-    """
-
     db = get_db()
 
     try:
